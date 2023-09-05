@@ -14,6 +14,12 @@ def onlineParser(url):
         source = response.text
         print("source: ", source)
 
+        # Запись содержимого в файл
+        with open("test.html", "w", encoding="utf-8") as file:
+            file.write(source)
+
+        print("Сайт успешно сохранен в файле test.html") # !!! НЕ УСПЕШНО!!! нужно устанавливать Selenium
+
         # Дальнейшая обработка содержимого страницы
 
         if source is not None:
@@ -100,8 +106,8 @@ def onlineParser(url):
             # TODO: что ещё ?
         
     else:
-        return None
         print("Ошибка при получении страницы:", response.status_code)
+        return None
 
 # online
 if __name__ == "__main__":
