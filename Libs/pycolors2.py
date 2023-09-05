@@ -1,5 +1,5 @@
-# 1.0
-class pycolors:
+# 2
+class PyColors:
     HEADER = '\033[95m' # Розовый
     YELLOW = '\033[33m' # Желтый
     OKBLUE = '\033[94m'
@@ -9,6 +9,12 @@ class pycolors:
     ENDC = '\033[0m'        # End color
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
+    
+    def __init__(self):
+        pass
+
+    def yellow_print(self, phrase, var):
+        print(f"{phrase}: {self.YELLOW}{var}{self.ENDC}")
 
 # Использование: colors.BOLD +
 # from Libs.pycolors import pycolors
