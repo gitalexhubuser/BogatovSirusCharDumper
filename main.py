@@ -29,7 +29,7 @@ def offlineParser(filePath):
     # colors.mass_print("page_h1", page_h1)
     # colors.mass_print("page_h2", page_h2)
 
-    # Имя
+    # Имя   
     user_name = sirus_site.find("h3", class_="display-6 mb-0 text-white").text.strip()
     colors.mass_print("user_name", user_name)
     
@@ -42,6 +42,14 @@ def offlineParser(filePath):
     # TODO: тут добавить ренегатов и тд!
     colors.mass_print("user_faction", user_faction)
     
+    # Уровень экипировки
+    user_itemLevel = sirus_site.find("div", class_="col pl-2 py-2 my-auto")
+    if user_itemLevel:
+        text = user_itemLevel.get_text()
+        numbers = re.findall(r'\d+', text)  # Находим все цифры в тексте
+        user_itemLevel = numbers[0]
+    colors.mass_print("user_itemLevel", user_itemLevel)
+
     # Уровень персонажа
     user_level = sirus_site.find("div", class_="col pl-2 py-2 my-auto")
     if user_level:
@@ -50,13 +58,12 @@ def offlineParser(filePath):
         user_level = numbers[1]
     colors.mass_print("user_level", user_level)
 
-    # Уровень экипировки
-    user_itemLevel = sirus_site.find("div", class_="col pl-2 py-2 my-auto")
-    if user_itemLevel:
-        text = user_itemLevel.get_text()
-        numbers = re.findall(r'\d+', text)  # Находим все цифры в тексте
-        user_itemLevel = numbers[0]
-    colors.mass_print("user_itemLevel", user_itemLevel)
+    # Расса
+    # Спек
+    # Класс
+    # Реалм - Sirus x5
+    # Очков достижений
+    # TODO: что ещё ?
 
 # offline
 if __name__ == "__main__":
