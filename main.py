@@ -91,6 +91,12 @@ def offlineParser(filePath):
     colors.mass_print("user_realm", user_realm)
 
     # Очков достижений
+    user_achievmentPoints = sirus_site.find("div", class_="ml-2 character-achievement--points")
+    if user_achievmentPoints:
+        achievement_points_text = user_achievmentPoints.get_text().strip()
+        user_achievmentPoints = ''.join(filter(str.isdigit,  achievement_points_text))
+    colors.mass_print("user_achievmentPoints", user_achievmentPoints)
+
     # TODO: что ещё ?
 
 # offline
