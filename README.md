@@ -16,7 +16,7 @@
 - [x] Класс
 - [x] Реалм
 - [x] Очков достижений
-- [x] Последние действия
+- [x] Последние действия (10 шт)
 - [ ] ...
 
 ---
@@ -43,7 +43,7 @@
 <details>
 <summary>Результат</summary>
 
-![Alt text](./Pictures/image2.png)
+![Alt text](./Pictures/image3.png)
 </details>
 
 ---
