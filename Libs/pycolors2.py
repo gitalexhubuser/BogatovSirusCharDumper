@@ -13,8 +13,15 @@ class PyColors:
     def __init__(self):
         pass
 
+    # По одному
     def yellow_print(self, phrase, var):
         print(f"{phrase}: {self.YELLOW}{var}{self.ENDC}")
+
+    # Массово
+    def mass_print(self, phrase, *args):
+        print(f"{phrase}: ", end="")
+        for var in args:
+            print(f"{self.YELLOW}{var}{self.ENDC} ", end="")
 
 # Использование: colors.BOLD +
 # from Libs.pycolors import pycolors
