@@ -1,6 +1,6 @@
 # BogatovSirusCharDumper
 
-![Alt text](./Pictures/image.png)
+![Alt text](./Pictures/ezgif-4-387ebbeeaf.png)
 
 ## Описание
 
