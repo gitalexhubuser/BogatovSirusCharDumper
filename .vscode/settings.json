@@ -10,5 +10,6 @@
     },
     "hide-files.files": [
         ".vscode"
-    ]
+    ],
+    "python.terminal.activateEnvInCurrentTerminal": true
 }
