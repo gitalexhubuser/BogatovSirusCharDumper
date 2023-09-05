@@ -67,6 +67,13 @@ def offlineParser(filePath):
     colors.mass_print("user_race", user_race)
 
     # Спек
+    user_spec = sirus_site.find("div", class_="col pl-2 py-2 my-auto")
+    if user_spec:
+        user_spec = user_spec.find_all("span", class_="mr-1")
+        if len(user_spec) >= 4:
+            user_spec = user_spec[2].get_text()
+    colors.mass_print("user_spec", user_spec)
+
     # Класс
     # Реалм - Sirus x5
     # Очков достижений
