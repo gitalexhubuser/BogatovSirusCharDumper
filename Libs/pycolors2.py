@@ -22,7 +22,8 @@ class PyColors:
         print(f"{phrase}: ", end="")
         for var in args:
             print(f"{self.YELLOW}{var}{self.ENDC} ", end="")
-
+        print()
+        
 # Использование: colors.BOLD +
 # from Libs.pycolors import pycolors
 # colors = pycolors() # Создаем экземпляр класса pycolors
