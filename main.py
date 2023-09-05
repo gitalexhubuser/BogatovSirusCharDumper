@@ -100,11 +100,11 @@ def offlineParser(filePath):
     # Последние действия
     last10actions = sirus_site.select("div.card-body.card-datatable ul.list-group li.list-group-item")
 
-    for action in last10actions:
+    for index, action in enumerate(last10actions, start=1):
         achievement_text = action.get_text().strip().replace('\n', ' ').replace('  ', '')
         achievement_text = achievement_text.replace('над', 'над ').replace('потратив', ' потратив')
-        print(str(action.index), achievement_text)
-        # colors.mass_print("achievement_text", achievement_text)
+        # print(f"Ачивка {index} - {achievement_text}")
+        colors.mass_print("achievement_text "+str(index), achievement_text)
 
     # TODO: что ещё ?
 
