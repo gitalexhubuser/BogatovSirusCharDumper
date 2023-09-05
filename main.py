@@ -49,7 +49,15 @@ def offlineParser(filePath):
         numbers = re.findall(r'\d+', text)  # Находим все цифры в тексте
         user_level = numbers[1]
     colors.mass_print("user_level", user_level)
-    
+
+    # Уровень экипировки
+    user_itemLevel = sirus_site.find("div", class_="col pl-2 py-2 my-auto")
+    if user_itemLevel:
+        text = user_itemLevel.get_text()
+        numbers = re.findall(r'\d+', text)  # Находим все цифры в тексте
+        user_itemLevel = numbers[0]
+    colors.mass_print("user_itemLevel", user_itemLevel)
+
 # offline
 if __name__ == "__main__":
     offlineParser("./_Target/index.html")
