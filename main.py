@@ -12,6 +12,7 @@ def offlineParser(filePath):
 
     ###########################################
 
+    # Тесты по урокам:
     # 1. Заголовок
     title = sirus_site.title.string
     title1 = sirus_site.title.text
@@ -27,12 +28,21 @@ def offlineParser(filePath):
     # colors.mass_print("page_h1", page_h1)
     # colors.mass_print("page_h2", page_h2)
 
-    # 3. Имя
+    # Имя
     user_name = sirus_site.find("h3", class_="display-6 mb-0 text-white").text.strip()
-    colors.mass_print("user_name ", user_name)
+    colors.mass_print("user_name", user_name)
+    
+    # Фракция
+    user_faction = sirus_site.find("div", class_="col-auto border-left")
+    if user_faction and user_faction.find("img", src="./index_files/alliance.png"):
+        user_faction = "Альянс"
+    else:
+        user_faction = "Другая фракция - не Альянс!"
+    # TODO: тут добавить ренегатов и тд!
+    colors.mass_print("user_faction", user_faction)
     
     # user_level = 
-    
+
 # offline
 if __name__ == "__main__":
     offlineParser("./_Target/index.html")
