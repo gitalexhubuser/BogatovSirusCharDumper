@@ -83,6 +83,13 @@ def offlineParser(filePath):
     colors.mass_print("user_class", user_class)
 
     # Реалм - Sirus x5
+    user_realm = sirus_site.find("div", class_="col pl-2 py-2 my-auto")
+    if user_realm:
+        user_realm = user_realm.find("span", class_="mr-2")
+        if user_realm:
+            user_realm = user_realm.get_text()
+    colors.mass_print("user_realm", user_realm)
+
     # Очков достижений
     # TODO: что ещё ?
 
