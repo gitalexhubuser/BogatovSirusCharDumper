@@ -97,6 +97,15 @@ def offlineParser(filePath):
         user_achievmentPoints = ''.join(filter(str.isdigit,  achievement_points_text))
     colors.mass_print("user_achievmentPoints", user_achievmentPoints)
 
+    # Последние действия
+    last10actions = sirus_site.select("div.card-body.card-datatable ul.list-group li.list-group-item")
+
+    for action in last10actions:
+        achievement_text = action.get_text().strip().replace('\n', ' ').replace('  ', '')
+        achievement_text = achievement_text.replace('над', 'над ').replace('потратив', ' потратив')
+        print(str(action.index), achievement_text)
+        # colors.mass_print("achievement_text", achievement_text)
+
     # TODO: что ещё ?
 
 # offline
