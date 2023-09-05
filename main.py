@@ -1,3 +1,4 @@
+import re
 from bs4 import BeautifulSoup
 from Libs.pycolors2 import PyColors
 
@@ -41,8 +42,14 @@ def offlineParser(filePath):
     # TODO: тут добавить ренегатов и тд!
     colors.mass_print("user_faction", user_faction)
     
-    # user_level = 
-
+    # Уровень персонажа
+    user_level = sirus_site.find("div", class_="col pl-2 py-2 my-auto")
+    if user_level:
+        text = user_level.get_text()
+        numbers = re.findall(r'\d+', text)  # Находим все цифры в тексте
+        user_level = numbers[1]
+    colors.mass_print("user_level", user_level)
+    
 # offline
 if __name__ == "__main__":
     offlineParser("./_Target/index.html")
